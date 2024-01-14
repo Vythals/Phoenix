@@ -1,0 +1,37 @@
+/*
+Theme Name: Phoenix
+Theme URI: https://referenced.ca
+Author: Vincent Hum
+Author URI: 
+Description: Un thème réalisé pour le site Web du Phoenix Oriental
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: Phoenix
+*/
+
+/////////////////////////////////////////////////////NORMALIZE//////////////////
+@import "normalize/normalize";
+@import "normalize/normalize_plus";
+
+
+///////////////////////////////////////////////////VARIABLES///////////////////
+@import "systeme/dimensions";
+@import "systeme/root";
+@import "systeme/heading";
+
+
+
+//////////////////////////////////////////////////BALISES HTML//////////////////
+@import "balises_html/site_html";
+@import "balises_html/site_body";
+@import "balises_html/site_entete";
+@import "balises_html/site_main";
+@import "balises_html/site_pied_page";
+
+
+
+///////////////////////////////////////////////////COMPOSANTS///////////////////
+
+

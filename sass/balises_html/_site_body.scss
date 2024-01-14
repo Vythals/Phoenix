@@ -1,0 +1,23 @@
+/* 
+** Tout ce qui concerne la balise body
+** 
+*/
+
+body {
+  background-color: var(--blanc);
+  height: 100%;
+  max-width: 100%;
+  width: 100vw;
+}
+
+@media screen and (min-width : $largeur__tablette) {
+  
+}
+
+@media screen and (min-width : $largeur__bureau){
+}
+
+
+@media screen and (min-width : $largeur__bureau_large){
+
+}
