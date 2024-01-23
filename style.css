@@ -353,13 +353,25 @@ Fichier pour les variables du thème (couleurs, root, polices)
 */
 :root {
   /* ***************************************************************************** Couleurs *** */
+  --deep-red: #B30000;
+  --golden-yellow: #FFD700;
+  --charcoal-gray: #333333;
+  --sage-green: #8F9779;
+  --creamy-beige: #EDE9E4;
+  --teal-blue: #007A7C;
   /* **************************************************************** Polices *** */
+  --police-titre:"Montserrat", sans-serif;
+  --police-texte: "Noto Serif", serif;
   /* ***************************************************************************** Espacement *** */
 }
 
 /*
 CSS Clam font-size generator : https://clamp.font-size.app/
 */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 a {
   font-size: clamp(1.25rem, 1.2137rem + 0.1453vw, 1.5625rem);
 }
@@ -427,20 +439,6 @@ i {
   font-weight: bold;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  margin-top: 0.4rem;
-}
-
-figcaption {
-  font-size: clamp(0.7rem, 0.125rem + 1.2vw, 1.1rem);
-  font-family: var(--police-texte);
-  line-height: 130%;
-  margin: 0 2rem;
-  transform: translateY(-0.2rem);
-}
-
 /* 
 ** Tout ce qui concerne la balise html
 ** 
@@ -466,6 +464,28 @@ body {
 /* 
 ** Tout ce qui concerne la balise main
 */
+.site_main {
+  background-color: var(--creamy-beige);
+}
+
 /* 
 ** Tout ce qui concerne la balise footer
-*//*# sourceMappingURL=style.css.map */
+*/
+/* 
+** Tout ce qui concerne le carrousel
+*/
+.my-slider-progress {
+  background: #ccc;
+}
+
+.my-slider-progress-bar {
+  background: var(--golden-yellow);
+  height: 2px;
+  transition: width 400ms ease;
+  width: 0;
+}
+
+.mot_gsap {
+  display: flex;
+  flex-direction: row;
+}

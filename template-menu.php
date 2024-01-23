@@ -7,7 +7,7 @@
 ?>
 <?php get_header(); ?>
 
-<main class="site_main site_main_programme">
+<main class="site_main">
 
 </main>
 

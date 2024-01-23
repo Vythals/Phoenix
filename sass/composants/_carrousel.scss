@@ -1,0 +1,13 @@
+/* 
+** Tout ce qui concerne le carrousel
+*/
+.my-slider-progress {
+    background: #ccc;
+  }
+  
+  .my-slider-progress-bar {
+    background: var(--golden-yellow);
+    height: 2px;
+    transition: width 400ms ease;
+    width: 0;
+  }
