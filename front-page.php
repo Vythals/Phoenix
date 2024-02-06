@@ -24,7 +24,7 @@ get_header(); ?>
                             ?>
                                 <li class="splide__slide">
                                     <div class="post-content">
-                                        <?php the_content(); ?>
+                                        <?php the_post_thumbnail(); ?>
                                     </div>
                                 </li>
                             <?php
@@ -48,29 +48,46 @@ get_header(); ?>
             ?>
         </div>
     </section>
-    <section>
-        <div>
-            <?php
-            // Récupérer les articles de la catégorie "galerie"
-            $accueil_posts = new WP_Query('category_name=accueil');
 
-            // Vérifier s'il y a des articles dans la catégorie "galerie"
-            if ($accueil_posts->have_posts()) :
-            ?>
-                <?php
-                while ($accueil_posts->have_posts()) : $accueil_posts->the_post();
-                ?>
-                    <?php the_content(); ?>
-                <?php
-                endwhile;
-                ?>
+    <section class="accueil-intro">
+        <div class="accueil-desc">
             <?php
-                // Réinitialiser la requête après l'utilisation de WP_Query
-                wp_reset_postdata();
-            else :
-                // Aucun article trouvé dans la catégorie "accueil"
-                echo 'Aucun article trouvé dans la catégorie "accueil".';
-            endif;
+            // Définir les arguments de la requête pour les articles des catégories "Accueil" et "Texte"
+            $args = array(
+                'category__and' => array(
+                    get_cat_ID('accueil'),
+                    get_cat_ID('texte')
+                ),
+            );
+            $custom_query = new WP_Query($args);
+            while ($custom_query->have_posts()) : $custom_query->the_post();
+            ?>
+                <div class="accueil-desc-texte">
+                    <?php the_content(); ?>
+                    <a href="<?php echo get_permalink(get_page_by_path('menu')); ?>">Découvrir les Menus</a>
+                </div>
+            <?php
+            endwhile;
+            wp_reset_postdata();
+            ?>
+
+            <?php
+            // Définir les arguments de la requête pour les articles des catégories "Accueil" et "Texte"
+            $args = array(
+                'category__and' => array(
+                    get_cat_ID('accueil'),
+                    get_cat_ID('image1')
+                ),
+            );
+            $custom_query = new WP_Query($args);
+            while ($custom_query->have_posts()) : $custom_query->the_post();
+            ?>
+                <div class="image-accueil-desc">
+                    <?php the_post_thumbnail(); ?>
+                </div>
+            <?php
+            endwhile;
+            wp_reset_postdata();
             ?>
         </div>
     </section>

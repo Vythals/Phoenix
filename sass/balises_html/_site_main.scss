@@ -4,9 +4,44 @@
 
 .site_main {
     background-color: var(--creamy-beige);
+    .accueil-intro{
+        .image-accueil-desc{}
+            .accueil-desc{
+                .accueil-desc-texte{
+                    .accueil-desc-texte-p{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        text-align: center;
+                    }
+                    a{
+                        display: flex;
+                        justify-content: center;
+                        text-decoration: none;
+                        color: var(--charcoal-gray);
+                    }
+                }
+            }
+            img{
+                width: 100dvw;
+                height: auto;
+            }
+        
+    }
 }
 @media screen and (min-width : $largeur__tablette) {
-  
+  .site_main{
+    .accueil-desc{
+        display: flex;
+        flex-direction: row;
+    }
+    .image-accueil-desc{
+        img{
+            width: 50dvw;
+            height: auto;
+        }
+    }
+  }
 }
 
 @media screen and (min-width : $largeur__bureau){
