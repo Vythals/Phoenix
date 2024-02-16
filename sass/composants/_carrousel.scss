@@ -11,3 +11,12 @@
     transition: width 400ms ease;
     width: 0;
   }
+.splide__slide img {
+    display: block;
+    margin: 0 auto;
+}
+/* Center the slides within the slider */
+.splide__track {
+  display: flex;
+  justify-content: center;
+}

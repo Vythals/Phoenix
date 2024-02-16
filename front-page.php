@@ -6,7 +6,7 @@
  */
 
 get_header(); ?>
-<main class="site_main site_main_accueil">
+<main class="site-main site_main_accueil">
     <section class="vedette">
         <div>
             <?php
@@ -31,11 +31,6 @@ get_header(); ?>
                             endwhile;
                             ?>
                         </ul>
-                    </div>
-
-                    <!-- Add the progress bar element -->
-                    <div class="my-slider-progress">
-                        <div class="my-slider-progress-bar"></div>
                     </div>
                 </div>
             <?php

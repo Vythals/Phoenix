@@ -7,14 +7,12 @@ Fichier pour les variables du thème (couleurs, root, polices)
 :root{
 
   /* ***************************************************************************** Couleurs *** */
-  --deep-red: #B30000;
-  --golden-yellow: #FFD700;
-  --charcoal-gray: #333333;
-  --sage-green: #8F9779;
-  --creamy-beige: #EDE9E4;
-  --teal-blue: #007A7C;
-    
-  
+  --rouge: #85101F;
+  --beige: #cfb419;
+  --grey: #333333;
+  --brun: #542A16;
+  --cream: #F9F5E3;
+  --rouge-trans: #851020b9;
   
   /* **************************************************************** Polices *** */
   --police-titre:'Noto Serif', serif;
@@ -22,6 +20,7 @@ Fichier pour les variables du thème (couleurs, root, polices)
   
   /* ***************************************************************************** Espacement *** */
   
+/* ***************************************************************************** shadow *** */
+    --text-shadow-petit: 2px 2px 4px rgba(0,0,0,0.26);
 
-  
   }

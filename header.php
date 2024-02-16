@@ -15,40 +15,94 @@
 <body>
 
   <header id="site-navigation" class="main-navigation">
-
-    <!-- Burger -->
-    <div class="burger-menu">
-      <div class="contenant-burger">
-        <svg>
-          <defs>
-            <filter id="gooeyness">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
-              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooeyness" />
-              <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
-            </filter>
-          </defs>
-        </svg>
-        <div class="plate plate2" onclick="toggleMenu()">
-          <svg class="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
-            <path class="line line1" d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475" />
-            <path class="line line2" d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034" />
-            <path class="line line3" d="M 50,50 H 30 C 30,50 12.288136,47.749959 12.288136,60.169492 C 12.288136,67.738339 16.712974,73.305085 40.677966,73.305085 C 73.791674,73.305085 108.47458,-19.915254 108.47458,-19.915254" />
-            <path class="line line4" d="M 50,50 H 70 C 70,50 81.779661,50.277128 81.779661,36.607372 C 81.779661,28.952694 77.941689,25 69.067797,25 C 39.95532,25 -16.949153,119.91525 -16.949153,119.91525" />
-            <path class="line line5" d="M 50,65 H 30 C 30,65 17.79661,64.618439 17.79661,74.152543 C 17.79661,80.667556 25.093813,81.355932 38.559322,81.355932 C 89.504001,81.355932 135.59322,-21.186441 135.59322,-21.186441" />
-            <path class="line line6" d="M 50,35 H 30 C 30,35 16.525424,35.528154 16.525424,24.152542 C 16.525424,17.535987 22.597755,13.559322 39.40678,13.559322 C 80.617882,13.559322 94.067797,111.01695 94.067797,111.01695" />
-          </svg>
-          <svg class="x" version="1.1" height="100" width="100" viewBox="0 0 100 100">
-            <path class="line" d="M 34,32 L 66,68" />
-            <path class="line" d="M 66,32 L 34,68" />
-          </svg>
-        </div>
-
+    <div class="container">
+      <div class="navbar">
+        <?php
+        // Vérifier si la fonction get_custom_logo est disponible (à partir de WordPress 4.5)
+        if (function_exists('the_custom_logo')) {
+          $custom_logo_id = get_theme_mod('custom_logo');
+          $custom_logo_url = wp_get_attachment_image_url($custom_logo_id, 'full');
+        ?>
+          <div class="site-logo">
+          <?php
+          if ($custom_logo_url) {
+            echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img src="' . esc_url($custom_logo_url) . '" alt="' . get_bloginfo('name') . '"></a>';
+          } else {
+            // Si le logo n'est pas défini, affiche le nom du site comme texte
+            echo '<a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a>';
+          }
+        }
+          ?>
+          </div>
+          <div class="meu-toggle">
+            <div id="menu-toggle-btn">
+              <span></span>
+            </div>
+          </div>
       </div>
-      <nav class="main-menu">
-        <!-- Ajoutez vos éléments de menu ici -->
-        <?php wp_nav_menu(array("theme_location" => "entete", "container" => "ul", "menu_class" => "menu")) ?>
-      </nav>
     </div>
 
+    <div class="nav-container">
+      <div class="nav-bg">
+        <div class="nav-container-bgg">
+          <div class="bgg-patern"></div>
+        </div>
+        <div class="nav-container-bgd"></div>
+      </div>
+      <div class="nav">
+        <div class="col flex">
+          <div class="nav-logo">
+            <?php
+            echo '<a class="underline" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a>';
+            ?>
+          </div>
+          <div class="nav-socials">
+            <a class="underline" href="https://www.ubereats.com/ca/store/phoenix-oriental/31VXuJFhSTaseiLTJjfoIQ" target="_blank">Uber Eats</a>
+            <a class="underline" href="https://www.skipthedishes.com/phoenix-oriental" target="_blank">SkipTheDishes</a>
+            <a class="underline" href="https://www.doordash.com/en-CA/store/phoenix-oriental-montr%C3%A9al-23514193/" target="_blank">DoorDash</a>
+          </div>
+        </div>
+        <div class="col">
+          <?php
+          $menu_name = 'entete';
+          $menu_items = wp_get_nav_menu_items($menu_name);
 
+          if (empty($menu_items)) {
+            echo '<p>Aucun élément de menu trouvé.</p>';
+          } else {
+            foreach ($menu_items as $item) {
+              $thumbnail_id = get_post_thumbnail_id($item->object_id);
+              $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'thumbnail', true)[0];
+
+              echo '<div class="nav-link">';
+              echo '<a href="' . esc_url($item->url) . '" class="lien' . esc_attr($item->menu_order) . ' underline">' . esc_html($item->title) . '</a>';
+
+              // Vérifiez si une image mise en avant est définie
+              if ($thumbnail_id) {
+                echo '<div class="nav-link-img"><img class="img-menu-burger" src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr($item->title) . '" class="thumbnail-image" /></div>';
+              }
+
+              echo '<div class="nav-item-wrapper"></div>';
+              echo '</div>';
+            }
+          }
+          ?>
+
+
+        </div>
+
+
+
+        <div class="nav-footer">
+          <div>
+            <a class="underline" href="https://maps.app.goo.gl/new7FC55us7Tuhmq5" target="_blank">7230 Bd Maurice-Duplessis, Montréal, QC H1E 4A7</a>
+          </div>
+          <div>
+            <a class="underline" href="tel: 514-903-3888" target="_blank">(514)-903-3888</a>
+          </div>
+        </div>
+      </div>
+    </div><?php // nav-container
+          ?>
+    </div>
   </header>

@@ -2,7 +2,7 @@
 ** Tout ce qui concerne la balise main
 */
 
-.site_main {
+.site-main {
     background-color: var(--creamy-beige);
     .accueil-intro{
         .image-accueil-desc{}
@@ -30,7 +30,7 @@
     }
 }
 @media screen and (min-width : $largeur__tablette) {
-  .site_main{
+  .site-main{
     .accueil-desc{
         display: flex;
         flex-direction: row;

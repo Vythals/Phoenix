@@ -1,9 +1,53 @@
 /* 
 ** Tout ce qui concerne la balise footer
 */
+.site_pied_page{
+    background-color: var(--rouge);
+    background-image: url("images/45-degree-fabric-light.png");
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    .contenu_footer{
+        padding-top: 74px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        .footer_nous{
 
+        }
+        .footer_menu{
+
+        }
+        .footer_adresse{
+
+        }
+        .footer_heures{
+            .parallaxe{
+                .image-parallaxe{
+                    position: absolute;
+                    z-index: 0;
+                    img{
+                        width: 30%;
+                    }
+                }
+            }
+            .heures{
+                position: relative;
+                z-index: 2;
+                .container-heures{
+                    width: 40%;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    h2{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
 @media screen and (min-width : $largeur__tablette) {
-  
 }
 
 @media screen and (min-width : $largeur__bureau){
