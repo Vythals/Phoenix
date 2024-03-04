@@ -123,61 +123,25 @@ const links = document.querySelectorAll(".nav-link a");
 links.forEach((link) => {
   const imagesBurgerTl = gsap.timeline({ paused: true });
   const limageDiv = link.nextElementSibling;
-
   imagesBurgerTl.to(limageDiv, {
-    transformOrigin: "center",
     autoAlpha: 1,
-    overwrite: "auto",
-    width: "300px",
-    duration: 0.3,
-    ease: "power2.out",
+    x: "-10%",
+    width: "200px",
+    duration: 0.4,
+    ease: "power4.out",
   });
+  imagesBurgerTl.to(
+    ".img-menu-burger",
+    {
+      width: "200px",
+      duration: 0.4,
+      ease: "power4.out",
+    },
+    0.2
+  );
 
-  // Variables pour stocker la position actuelle
-  let currentX = 0;
-  let currentY = 0;
-
-  // Suivi de la souris
-  link.addEventListener("mousemove", (e) => {
-    const { offsetX, offsetY, target } = e;
-    const { offsetWidth, offsetHeight } = target;
-
-    const xPercent = (offsetX / offsetWidth - 0.5) * 2;
-    const yPercent = (offsetY / offsetHeight - 0.5) * 2;
-
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-
-    gsap.to(limageDiv, {
-      x: `${xPercent * (screenWidth / 12)}px`, // Ajustez la valeur de déplacement horizontal
-      y: `${yPercent * (screenHeight / 8)}px`, // Ajustez la valeur de déplacement vertical
-      skewX: xPercent * 5, // Ajustez la valeur de skew en fonction du mouvement horizontal
-      ease: "power1.out",
-    });
-  });
-
-  // Sauvegardez la position actuelle lorsque le lien est survolé
-  link.addEventListener("mouseenter", () => {
-    currentX = gsap.getProperty(limageDiv, "x");
-    currentY = gsap.getProperty(limageDiv, "y");
-    imagesBurgerTl.play();
-  });
-
-  // Arrêtez l'animation et réinitialisez la position de la div lorsque l'on quitte le lien
-  link.addEventListener("mouseleave", () => {
-    imagesBurgerTl.reverse();
-  });
-
-  // Utilisez l'événement onComplete pour réinitialiser la position après l'animation inverse
-  imagesBurgerTl.eventCallback("onComplete", () => {
-    gsap.to(limageDiv, {
-      x: currentX,
-      y: currentY,
-      skewX: 0,
-      skewY: 0,
-      ease: "power2.out",
-    });
-  });
+  link.addEventListener("mouseenter", () => imagesBurgerTl.play());
+  link.addEventListener("mouseleave", () => imagesBurgerTl.reverse());
 });
 
 //nav menu couleur////////////////////////////////////

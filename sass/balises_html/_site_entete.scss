@@ -22,12 +22,6 @@
   align-items: center;
   padding: 1.5em 3em;
 
-  &.activenav {
-    box-shadow: 0 8px 32px 0 rgba(135, 78, 31, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-
   .site-logo > a {
     z-index: 1000000;
     color: var(--cream);
