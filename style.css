@@ -359,6 +359,7 @@ Fichier pour les variables du thème (couleurs, root, polices)
   --brun: #542A16;
   --cream: #F4F2E6;
   --rouge-trans: #851020b9;
+  --rouge-transV2: #851020e1;
   /* **************************************************************** Polices *** */
   --police-titre:"Noto Serif", serif;
   --police-texte: "Montserrat", sans-serif;
@@ -881,7 +882,7 @@ main {
   align-items: center;
 }
 .site_pied_page .contenu_footer .footer_heures .heures .container-heures .gsap-heures {
-  transform: translateY(50px);
+  transform: translateY(150px);
 }
 .site_pied_page .contenu_footer .footer_heures .heures .container-heures figure {
   width: -moz-fit-content;
@@ -953,13 +954,13 @@ main {
 }
 @media screen and (min-width: 992px) {
   .site_pied_page .contenu_footer .footer_heures .carotte {
-    bottom: -60%;
+    bottom: -10%;
   }
   .site_pied_page .contenu_footer .footer_heures .oeuf {
     top: 55%;
   }
   .site_pied_page .contenu_footer .footer_heures .tete-ail {
-    bottom: -110%;
+    bottom: -40%;
   }
 }
 /* 
@@ -998,6 +999,12 @@ main {
 /* 
 ** Tout ce qui concerne la page menu
 */
+.tippy-box[data-theme~=menu] {
+  background-color: var(--rouge-transV2);
+  color: var(--cream);
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
 .vedette .titre-vedette {
   position: absolute;
   top: 30%;
@@ -1021,10 +1028,7 @@ main {
   pointer-events: none;
 }
 
-.menus .sushi-emporter {
-  background-color: var(--cream);
-}
-.menus .chaud-emporter {
+.menus .nourriture {
   background-color: var(--cream);
 }
 .menus .spikes {
@@ -1230,11 +1234,6 @@ main {
   display: none;
 }
 
-.tippy-box[data-theme~=menu] {
-  background-color: var(--cream);
-  color: var(--gray);
-}
-
 @media screen and (min-width: 800px) {
   /* Styles pour les écrans de taille tablette et plus */
   .vedette .titre-vedette {
@@ -1352,10 +1351,13 @@ main {
 }
 @media screen and (min-width: 992px) {
   /* Styles pour les écrans de taille bureau */
+  .container-categorie-content {
+    min-height: 300px;
+  }
   .container-images-menu {
     display: flex !important;
   }
   .menu-contenu {
     width: 500px;
   }
-}
+}/*# sourceMappingURL=style.css.map */

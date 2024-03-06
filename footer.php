@@ -43,10 +43,10 @@
       <hr class="gsap-footer-hr">
       <div class="footer_adresse">
         <a href="https://maps.app.goo.gl/new7FC55us7Tuhmq5" target="_blank">
-          <p class="gsap-footer">7230 Bd Maurice-Duplessis, Montréal,</p>
+          <p class="gsap-footer-adress">7230 Bd Maurice-Duplessis, Montréal,</p>
         </a>
         <a href="https://maps.app.goo.gl/new7FC55us7Tuhmq5" target="_blank">
-          <p class="gsap-footer">QC H1E 4A7</p>
+          <p class="gsap-footer-adress">QC H1E 4A7</p>
         </a>
       </div>
       <hr class="gsap-footer-hr">
@@ -55,7 +55,7 @@
         wp_nav_menu(array(
           "theme_location" => "pied",
           "menu_class"     => "menu",
-          "link_class"     => "underline gsap-footer"
+          "link_class"     => "underline gsap-footer-mentions"
         ));
         ?>
       </div>

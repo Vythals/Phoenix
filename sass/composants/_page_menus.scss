@@ -1,6 +1,11 @@
 /* 
 ** Tout ce qui concerne la page menu
 */
+.tippy-box[data-theme~='menu'] {
+    background-color: var(--rouge-transV2);
+    color: var(--cream);
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);    
+  }
 .vedette{
     .titre-vedette{
         position: absolute;
@@ -26,10 +31,7 @@
     }
 }
 .menus{
-    .sushi-emporter{
-        background-color: var(--cream);
-    }
-    .chaud-emporter{
+    .nourriture{
         background-color: var(--cream);
         
         }
@@ -255,10 +257,6 @@
         }
     }
 }
-.tippy-box[data-theme~='menu'] {
-    background-color: var(--cream);
-    color: var(--gray);
-  }
   @media screen and (min-width: $largeur__tablette) {
     /* Styles pour les écrans de taille tablette et plus */
     .vedette{
@@ -389,6 +387,9 @@
   
   @media screen and (min-width: $largeur__bureau) {
     /* Styles pour les écrans de taille bureau */
+    .container-categorie-content{
+        min-height: 300px;
+    }
     .container-images-menu{
         display: flex !important;
     }

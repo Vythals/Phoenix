@@ -157,7 +157,7 @@ gsap.to(".image-parallaxe", {
   },
 });
 gsap.to(".gsap-heures", {
-  y: "-10",
+  y: "-50",
   ease: "none",
   scrollTrigger: {
     trigger: ".footer_heures",
@@ -175,11 +175,29 @@ gsap.from(".gsap-footer", {
   ease: "power3.out",
   stagger: 0.3,
   scrollTrigger: {
-    trigger: ".footer-low",
-    start: "50% bottom",
+    trigger: ".gsap-footer",
   },
 });
-
+gsap.from(".gsap-footer-adress", {
+  y: "30",
+  opacity: 0,
+  duration: 0.4,
+  ease: "power3.out",
+  stagger: 0.3,
+  scrollTrigger: {
+    trigger: ".gsap-footer-adress",
+  },
+});
+gsap.from(".gsap-footer-mentions", {
+  y: "30",
+  opacity: 0,
+  duration: 0.4,
+  ease: "power3.out",
+  stagger: 0.3,
+  scrollTrigger: {
+    trigger: ".gsap-footer-mentions",
+  },
+});
 gsap.from(".gsap-footer-hr", {
   y: "30",
   opacity: 0,
