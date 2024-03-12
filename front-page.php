@@ -7,43 +7,73 @@
 
 get_header(); ?>
 <main class="site-main site_main_accueil">
-    <section class="vedette">
+    <section class="accueil-vedette">
         <div>
-            <?php
-            // Récupérer les articles de la catégorie "galerie"
-            $galerie_posts = new WP_Query('category_name=galerie');
-
-            // Vérifier s'il y a des articles dans la catégorie "galerie"
-            if ($galerie_posts->have_posts()) :
-            ?>
-                <div class="splide">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <?php
-                            while ($galerie_posts->have_posts()) : $galerie_posts->the_post();
-                            ?>
-                                <li class="splide__slide">
-                                    <div class="post-content">
-                                        <?php the_post_thumbnail(); ?>
-                                    </div>
-                                </li>
-                            <?php
-                            endwhile;
-                            ?>
-                        </ul>
+            <div class="ga-1 groupe-top">
+                <div class="texte-vedette-intro">
+                    <div class="texte-un">
+                        <div class="mot-gsap">
+                            <h1 class="lettre-gsap">P</h1>
+                            <h1 class="lettre-gsap">h</h1>
+                            <h1 class="lettre-gsap">o</h1>
+                            <h1 class="lettre-gsap">e</h1>
+                            <h1 class="lettre-gsap">n</h1>
+                            <h1 class="lettre-gsap">i</h1>
+                            <h1 class="lettre-gsap">x</h1>
+                        </div>
+                        <div class="mot-gsap">
+                            <h1 class="lettre-gsap">O</h1>
+                            <h1 class="lettre-gsap">r</h1>
+                            <h1 class="lettre-gsap">i</h1>
+                            <h1 class="lettre-gsap">e</h1>
+                            <h1 class="lettre-gsap">n</h1>
+                            <h1 class="lettre-gsap">t</h1>
+                            <h1 class="lettre-gsap">a</h1>
+                            <h1 class="lettre-gsap">l</h1>
+                        </div>
                     </div>
                 </div>
-            <?php
-                // Réinitialiser la requête après l'utilisation de WP_Query
-                wp_reset_postdata();
-            else :
-                // Aucun article trouvé dans la catégorie "galerie"
-                echo 'Aucun article trouvé dans la catégorie "galerie".';
-            endif;
-            ?>
+                <div class="image-un">
+                    <?php
+                    $menu_soup_photo_post = get_page_by_path('accueil-image-un', OBJECT, 'post');
+                    $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
+                    $featured_image_url = wp_get_attachment_url($featured_image_id);
+                    echo '<div class="container-images-accueil img-accueil-un"><img class="images-accueil" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                    ?>
+                </div>
+                <p>Une fusion parfaite de traditions culinaires et d'innovation audacieuse.</p>
+            </div>
+            <div>
+                <h4 class="scroll">Scroll....................</h4>
+            </div>
+            <div class="ga-1 vedette-block-gauche">
+                <div class="img-g">
+                    <?php
+                    $menu_soup_photo_post = get_page_by_path('accueil-image-riz', OBJECT, 'post');
+                    $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
+                    $featured_image_url = wp_get_attachment_url($featured_image_id);
+                    echo '<div class="container-images-accueil img-accueil-deux"><img class="images-accueil" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                    ?>
+                </div>
+                <h2>L'art de la dégustation</h2>
+                <p>Explorez notre univers culinaire unique.</p>
+            </div>
+            <div class="ga-1 vedette-block-droit">
+                <p>Succombez à notre ambiance chaleureuse et dégustez des moments inoubliables.</p>
+                <div class="img-d">
+                    <?php
+                    $menu_soup_photo_post = get_page_by_path('accueil-image-deux', OBJECT, 'post');
+                    $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
+                    $featured_image_url = wp_get_attachment_url($featured_image_id);
+                    echo '<div class="container-images-accueil img-accueil-trois"><img class="images-accueil" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                    ?>
+                </div>
+            </div>
+            <div>
+                <h4 class="fleche-bas">Continuer....................</h4>
+            </div>
         </div>
     </section>
-
     <section class="accueil-intro">
         <div class="accueil-desc">
             <?php
@@ -87,8 +117,4 @@ get_header(); ?>
         </div>
     </section>
 </main>
-<?php
-// Enqueue your JavaScript file only on the front page
-wp_enqueue_script('carrousel', get_template_directory_uri() . '/js/carrousel.js', array('jquery'), null, true);
-?>
 <?php get_footer(); ?>

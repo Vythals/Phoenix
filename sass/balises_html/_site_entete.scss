@@ -14,6 +14,7 @@
 }
 
 .navbar {
+  pointer-events:none;
   position: fixed;
   z-index: 10000000;
   width: 100%;
@@ -22,9 +23,13 @@
   align-items: center;
   padding: 1.5em 3em;
 
-  .site-logo > a {
+  .site-logo{
+    pointer-events: all;
     z-index: 1000000;
     color: var(--cream);
+  }
+  .meu-toggle{
+    pointer-events: all;
   }
 }
 

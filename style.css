@@ -379,10 +379,6 @@ a {
   font-size: clamp(1.25rem, 1.2137rem + 0.1453vw, 1.5625rem);
 }
 
-h1 {
-  font-size: clamp(1.3rem, -0.0385rem + 3vw, 2rem);
-}
-
 h2 {
   font-size: clamp(1.6875rem, 1.6657rem + 0.0872vw, 1.875rem);
 }
@@ -406,7 +402,6 @@ h6 {
 p,
 ul,
 li {
-  font-size: clamp(1.3rem, 1.0887rem + 0.1453vw, 1.4375rem);
   font-family: var(--police-texte);
   line-height: 150%;
 }
@@ -480,6 +475,7 @@ body {
 }
 
 .navbar {
+  pointer-events: none;
   position: fixed;
   z-index: 10000000;
   width: 100%;
@@ -488,9 +484,13 @@ body {
   align-items: center;
   padding: 1.5em 3em;
 }
-.navbar .site-logo > a {
+.navbar .site-logo {
+  pointer-events: all;
   z-index: 1000000;
   color: var(--cream);
+}
+.navbar .meu-toggle {
+  pointer-events: all;
 }
 
 .header {
@@ -859,6 +859,7 @@ main {
   font-size: 0.8rem;
 }
 .site_pied_page .contenu_footer .footer_heures {
+  min-height: 500px;
   background-color: #f7ecd1;
   background-image: url("images/asfalt-dark.png");
 }
@@ -888,6 +889,7 @@ main {
   width: -moz-fit-content;
   width: fit-content;
   margin: 1rem 0;
+  min-height: 298px;
 }
 .site_pied_page .contenu_footer .footer_heures .heures .container-heures figure table {
   border-collapse: collapse;
@@ -989,20 +991,32 @@ main {
 }
 
 /* 
-** Tout ce qui concerne la préparation au animation GSAP
-*/
-.mot_gsap {
-  display: flex;
-  flex-direction: row;
-}
-
-/* 
 ** Tout ce qui concerne la page menu
 */
 .tippy-box[data-theme~=menu] {
   background-color: var(--rouge-transV2);
   color: var(--cream);
   box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.menu-volonte .texte-anglais {
+  font-weight: lighter;
+  font-style: italic;
+}
+.menu-volonte .acf-content {
+  display: none;
+}
+.menu-volonte .information-volonte .container-categorie-content {
+  flex-direction: column;
+}
+.menu-volonte .information-volonte .container-categorie-content div {
+  max-width: 60%;
+}
+.menu-volonte .information-volonte .container-categorie-content div p {
+  font-size: medium;
+}
+.menu-volonte .information-volonte .mot_gsap h2 {
+  margin: 0;
 }
 
 .vedette .titre-vedette {
@@ -1360,4 +1374,126 @@ main {
   .menu-contenu {
     width: 500px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/* 
+** Tout ce qui concerne la page d'accueil
+*/
+.mot_gsap {
+  display: flex;
+}
+
+main {
+  background-image: none;
+}
+
+.ga-1 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.groupe-top p {
+  padding-left: 3rem;
+}
+
+.accueil-vedette {
+  color: #fff;
+  padding: 2rem;
+  padding-top: 5rem;
+}
+.accueil-vedette .mot-gsap {
+  display: flex;
+}
+.accueil-vedette .texte-un {
+  display: flex;
+}
+.accueil-vedette .texte-vedette-intro {
+  position: relative;
+  z-index: 10;
+}
+
+.scroll {
+  position: absolute;
+  writing-mode: vertical-rl;
+  top: 10rem;
+}
+
+.fleche-bas {
+  position: absolute;
+  writing-mode: vertical-lr;
+  top: 110vh;
+}
+
+.container-images-accueil {
+  width: -moz-min-content;
+  width: min-content;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+.container-images-accueil .images-accueil {
+  width: auto;
+  height: clamp(9.375rem, 3.75rem + 30vw, 18.75rem);
+}
+
+.vedette-block-gauche h2 {
+  writing-mode: vertical-rl;
+  position: absolute;
+  left: clamp(13rem, 5.8rem + 38.4vw, 25rem);
+  max-height: clamp(12.5rem, 5rem + 40vw, 25rem);
+}
+
+.vedette-block-droit {
+  flex-direction: column-reverse;
+}
+.vedette-block-droit p {
+  align-self: flex-end;
+  width: clamp(14rem, 7.4rem + 35.2vw, 25rem);
+}
+
+.image-un {
+  width: -moz-min-content;
+  width: min-content;
+  align-self: flex-end;
+}
+
+.img-g {
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.img-d {
+  width: -moz-min-content;
+  width: min-content;
+  align-self: flex-end;
+}
+
+.img-accueil-un {
+  height: clamp(9.375rem, 3.75rem + 30vw, 18.75rem);
+}
+
+.img-accueil-deux {
+  width: clamp(9.375rem, 3.75rem + 30vw, 18.75rem);
+  height: clamp(12.5rem, 5rem + 40vw, 25rem);
+}
+.img-accueil-deux .images-accueil {
+  height: clamp(12.5rem, 5rem + 40vw, 25rem);
+}
+
+.img-accueil-trois {
+  width: clamp(14rem, 7.4rem + 35.2vw, 25rem);
+  height: clamp(9.375rem, 3.75rem + 30vw, 18.75rem);
+}
+.img-accueil-trois .images-accueil {
+  width: clamp(14rem, 7.4rem + 35.2vw, 25rem);
+}
+
+.accueil-intro {
+  background-color: #fff;
+  padding: 2rem;
+}
+.accueil-intro .accueil-desc div:nth-child(3n) {
+  color: var(--beige);
+}

@@ -156,24 +156,43 @@ gsap.to(".image-parallaxe", {
     scrub: 0.5,
   },
 });
-gsap.to(".gsap-heures", {
-  y: "-50",
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".footer_heures",
-    start: "-20px bottom",
-    end: "bottom bottom",
-    endTrigger: ".footer-low",
-    scrub: 0.5,
-  },
-});
+// Vérifier la largeur de l'écran
+const isWideScreen = window.matchMedia("(min-width: 800px)").matches;
+
+// Animation GSAP en fonction de la largeur de l'écran
+if (isWideScreen) {
+  gsap.to(".gsap-heures", {
+    y: "-50",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".footer_heures",
+      start: "-20px bottom",
+      end: "bottom bottom",
+      endTrigger: ".footer-low",
+      scrub: 0.5,
+    },
+  });
+} else {
+  gsap.to(".gsap-heures", {
+    y: "-30",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".footer_heures",
+      start: "-20px bottom",
+      end: "bottom bottom",
+      endTrigger: ".footer-low",
+      scrub: 0.5,
+    },
+  });
+}
+
 //footer classique
 gsap.from(".gsap-footer", {
   y: "30",
   opacity: 0,
-  duration: 0.4,
+  duration: 1,
   ease: "power3.out",
-  stagger: 0.3,
+  stagger: 0.5,
   scrollTrigger: {
     trigger: ".gsap-footer",
   },
@@ -181,9 +200,9 @@ gsap.from(".gsap-footer", {
 gsap.from(".gsap-footer-adress", {
   y: "30",
   opacity: 0,
-  duration: 0.4,
+  duration: 2,
   ease: "power3.out",
-  stagger: 0.3,
+  stagger: 0.5,
   scrollTrigger: {
     trigger: ".gsap-footer-adress",
   },
@@ -191,9 +210,9 @@ gsap.from(".gsap-footer-adress", {
 gsap.from(".gsap-footer-mentions", {
   y: "30",
   opacity: 0,
-  duration: 0.4,
+  duration: 2,
   ease: "power3.out",
-  stagger: 0.3,
+  stagger: 0.5,
   scrollTrigger: {
     trigger: ".gsap-footer-mentions",
   },

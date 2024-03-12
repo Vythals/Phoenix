@@ -1,11 +1,38 @@
 /* 
 ** Tout ce qui concerne la page menu
 */
+
 .tippy-box[data-theme~='menu'] {
     background-color: var(--rouge-transV2);
     color: var(--cream);
     box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);    
   }
+.menu-volonte{
+    .texte-anglais{
+        font-weight: lighter;
+        font-style: italic;
+    }
+    .acf-content{
+        display: none;
+    }
+    .information-volonte{
+        .container-categorie-content{
+            flex-direction: column;
+            div{
+                max-width: 60%;
+                p{
+                    font-size:medium;
+                }
+            }
+        }
+        .mot_gsap{
+            h2{
+                margin: 0;
+            }
+        }
+
+    }
+}
 .vedette{
     .titre-vedette{
         position: absolute;

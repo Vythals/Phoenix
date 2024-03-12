@@ -8,7 +8,6 @@ a{
   font-size: clamp(1.25rem, 1.2137rem + 0.1453vw, 1.5625rem);
 }
 h1 {
-  font-size: clamp(1.3rem, -0.0385rem + 3vw, 2rem);
 }
 h2 {
   font-size: clamp(1.6875rem, 1.6657rem + 0.0872vw, 1.875rem);
@@ -33,7 +32,6 @@ p,
 ul,
 li
  {
-  font-size: clamp(1.3rem, 1.0887rem + 0.1453vw, 1.4375rem);
  
   @media screen and (min-width:$largeur__bureau){
     font-size: clamp(1.1875rem, 1.1337rem + 0.0615vw, 1.28125rem);

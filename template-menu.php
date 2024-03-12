@@ -250,7 +250,7 @@
                     <h2 class="titre-menu-categorie-gsap">Spéciaux</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-combo-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-combo-sushi-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
@@ -264,7 +264,7 @@
                     <h2 class="titre-menu-categorie-gsap">Nigiris et Sashimi</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-soup-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-nigiri-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
@@ -278,7 +278,7 @@
                     <h2 class="titre-menu-categorie-gsap">Hosomakis</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-entrees-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-hosomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
@@ -292,7 +292,7 @@
                     <h2 class="titre-menu-categorie-gsap">Makis</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-porc-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-makis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
@@ -306,7 +306,7 @@
                     <h2 class="titre-menu-categorie-gsap">Futomakis</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-fruits-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-futomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
@@ -344,7 +344,7 @@
                         ?>
 
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,combo" relation="AND" exclude_categories="sushi" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,combo" relation="AND" exclude_categories="sushi" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -358,7 +358,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,soupes" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,soupes" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -372,7 +372,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,entrees" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,entrees" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -386,7 +386,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,porc" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,porc" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -400,7 +400,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,fruits-de-mer" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,fruits-de-mer" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -414,7 +414,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,boeuf" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,boeuf" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -428,7 +428,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,poulet" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,poulet" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -442,7 +442,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,canard" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,canard" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -456,7 +456,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,agneau" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,agneau" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -470,7 +470,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,legume" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,legume" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -484,13 +484,13 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,riznouilles" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,riznouilles" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
                 <div class="spikes"></div>
             </div>
-            <?php //--------------------------------------------------------Sushi Memporter-------------------------------
+            <?php //--------------------------------------------------------Sushi la-carte-------------------------------
             ?>
             <div class="sushi-carte nourriture">
                 <div class="spikesDeux"></div>
@@ -499,13 +499,13 @@
                     <h2 class="titre-menu-categorie-gsap">Spéciaux</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-combo-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-combo-sushi-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,combo-sushi" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,combo-sushi" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -513,13 +513,13 @@
                     <h2 class="titre-menu-categorie-gsap">Nigiris et Sashimi</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-soup-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-nigiri-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,nigiris" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,nigiris" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -527,13 +527,13 @@
                     <h2 class="titre-menu-categorie-gsap">Hosomakis</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-entrees-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-hosomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,hosomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,hosomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -541,13 +541,13 @@
                     <h2 class="titre-menu-categorie-gsap">Makis</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-porc-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-makis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,makis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,makis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -555,46 +555,48 @@
                     <h2 class="titre-menu-categorie-gsap">Futomakis</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-fruits-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-futomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,futomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,futomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
                 <div class="spikes"></div>
             </div>
         </section>
-        <?php //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!MENU-À-LA-CARTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        <?php //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!MENU-À-Volonté!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         ?>
         <section class="menu-volonte">
             <h2 class="gros-titre">Menu à Volonté</h2>
             <div class="chaud-volonte nourriture">
                 <div class="spikesDeux"></div>
                 <h2 class="gros-titre">Cuisine Szechuannaise</h2>
-                <div class="categorie-menu combo">
-                    <h2 class="titre-menu-categorie-gsap">Spéciaux</h2>
+                <div class="categorie-menu information-volonte">
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-combo-photo', OBJECT, 'post');
-                        $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
+                        $args = array(
+                            'category_name' => 'menu-a-volonte',
+                            'category__not_in' => get_cat_ID('nourriture'),
+                            'order' => 'ASC', // Inverser l'ordre
+                        );
 
-                        // Définir la taille souhaitée
-                        $image_size = 'thumbnail'; // Remplacez 'thumbnail' par la taille souhaitée (par exemple, 'medium', 'large', 'full', ou une taille personnalisée)
+                        $query = new WP_Query($args);
 
-                        // Récupérer le code HTML de l'image avec la taille spécifiée, ajout de l'attribut loading="lazy", et de la classe "images-menu"
-                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
-
-                        // Afficher le code HTML
-                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
+                        if ($query->have_posts()) :
+                            while ($query->have_posts()) : $query->the_post();
+                                the_content();
+                            endwhile;
+                            wp_reset_postdata();
+                        else :
+                            // Aucun article trouvé
+                            echo 'Aucun article trouvé.';
+                        endif;
                         ?>
 
-                        <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,combo" relation="AND" exclude_categories="sushi" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
-                        ?>
                     </div>
                 </div>
                 <div class="categorie-menu soupes">
@@ -607,7 +609,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,soupes" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,soupes" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -621,21 +623,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,entrees" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
-                        ?>
-                    </div>
-                </div>
-                <div class="categorie-menu porc">
-                    <h2 class="titre-menu-categorie-gsap">Porc</h2>
-                    <div class="container-categorie-content">
-                        <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-porc-photo', OBJECT, 'post');
-                        $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
-                        ?>
-                        <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,porc" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,entrees" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -649,7 +637,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,fruits-de-mer" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,fruits-de-mer" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -663,7 +651,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,boeuf" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,boeuf" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -677,35 +665,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,poulet" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
-                        ?>
-                    </div>
-                </div>
-                <div class="categorie-menu canard">
-                    <h2 class="titre-menu-categorie-gsap">1/2 Canard</h2>
-                    <div class="container-categorie-content">
-                        <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-canard-photo', OBJECT, 'post');
-                        $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
-                        ?>
-                        <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,canard" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
-                        ?>
-                    </div>
-                </div>
-                <div class="categorie-menu agneau">
-                    <h2 class="titre-menu-categorie-gsap">Agneau</h2>
-                    <div class="container-categorie-content">
-                        <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-agneau-photo', OBJECT, 'post');
-                        $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
-                        ?>
-                        <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,agneau" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,poulet" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -719,7 +679,7 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,legume" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,legume" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -733,42 +693,28 @@
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,riznouilles" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,riznouilles" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
                 <div class="spikes"></div>
             </div>
-            <?php //--------------------------------------------------------Sushi Memporter-------------------------------
+            <?php //--------------------------------------------------------Sushi Mvolonte-------------------------------
             ?>
-            <div class="sushi-emporter nourriture">
+            <div class="sushi-volonte nourriture">
                 <div class="spikesDeux"></div>
                 <h2 class="gros-titre">Sushi</h2>
-                <div class="categorie-menu combo">
-                    <h2 class="titre-menu-categorie-gsap">Spéciaux</h2>
-                    <div class="container-categorie-content">
-                        <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-combo-photo', OBJECT, 'post');
-                        $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
-                        ?>
-                        <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,combo-sushi" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
-                        ?>
-                    </div>
-                </div>
                 <div class="categorie-menu soupes">
                     <h2 class="titre-menu-categorie-gsap">Nigiris et Sashimi</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-soup-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-nigiri-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,nigiris" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,nigiris" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -776,13 +722,13 @@
                     <h2 class="titre-menu-categorie-gsap">Hosomakis</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-entrees-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-hosomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,hosomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,hosomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -790,13 +736,13 @@
                     <h2 class="titre-menu-categorie-gsap">Makis</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-porc-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-makis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,makis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,makis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -804,13 +750,13 @@
                     <h2 class="titre-menu-categorie-gsap">Futomakis</h2>
                     <div class="container-categorie-content">
                         <?php
-                        $menu_soup_photo_post = get_page_by_path('menu-fruits-photo', OBJECT, 'post');
+                        $menu_soup_photo_post = get_page_by_path('menu-futomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
                         $featured_image_url = wp_get_attachment_url($featured_image_id);
                         echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                         ?>
                         <?php
-                        echo do_shortcode('[custom_category_posts categories="menu-a-emporter,futomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
+                        echo do_shortcode('[custom_category_posts categories="menu-a-volonte,futomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
                         ?>
                     </div>
                 </div>
@@ -819,8 +765,4 @@
         </section>
     </section>
 </main>
-<?php
-// Enqueue your JavaScript file only on the front page
-wp_enqueue_script('carrousel', get_template_directory_uri() . '/js/carrousel.js', array('jquery'), null, true);
-?>
 <?php get_footer(); ?>

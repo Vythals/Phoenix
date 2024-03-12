@@ -1,5 +1,19 @@
 gsap.registerPlugin(ScrollTrigger);
 /////////////////////////////Vedette/////////////////////
+document.addEventListener("DOMContentLoaded", function () {
+  var splide = new Splide(".splide", {
+    type: "fade",
+    rewind: true,
+    speed: 2000,
+    autoplay: (boolean = true),
+    interval: (number = 5000),
+    arrows: (boolean = false),
+    pagination: (boolean = false),
+    height: "100dvh",
+  });
+  splide.mount();
+});
+///////////gsap
 gsap.from(".titre-gsap", {
   y: "80",
   opacity: 0,
@@ -39,77 +53,76 @@ gsap.from(".button-menu", {
   stagger: 0.1,
 });
 /////////////////////titre menu categorie///////////////////
-const titresCategorie = document.querySelectorAll('.titre-menu-categorie-gsap');
+const titresCategorie = document.querySelectorAll(".titre-menu-categorie-gsap");
 
-    // Utilisez GSAP pour animer chaque élément individuellement
-    titresCategorie.forEach((titreCategorie, index) => {
-        gsap.from(titreCategorie, {
-            opacity: 0,
-            duration: 1,
-            ease:"power1.out",
-            scrollTrigger: {
-                trigger: titreCategorie,
-            }
-        });
-        gsap.to(titreCategorie, {
-          y: -50,
-          scrollTrigger: {
-              trigger: titreCategorie,
-              scrub:  1,
-          }
-      });
+// Utilisez GSAP pour animer chaque élément individuellement
+titresCategorie.forEach((titreCategorie, index) => {
+  gsap.from(titreCategorie, {
+    opacity: 0,
+    duration: 1,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: titreCategorie,
+    },
+  });
+  gsap.to(titreCategorie, {
+    y: -100,
+    scrollTrigger: {
+      trigger: titreCategorie,
+      scrub: 1,
+    },
+  });
+});
+//////////////////////////////////images categories////////////////////////////
+const containerImagesMenu = document.querySelectorAll(".container-images-menu");
+
+// Utilisez GSAP pour animer chaque élément individuellement
+containerImagesMenu.forEach((unContainerImagesMenu, index) => {
+  gsap.from(unContainerImagesMenu, {
+    height: 0,
+    y: -150,
+    duration: 0.8,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: unContainerImagesMenu,
+      start: "center bottom",
+    },
+  });
+});
+const elements = document.querySelectorAll(".images-menu");
+
+// Utilisez GSAP pour animer chaque élément individuellement
+elements.forEach((element, index) => {
+  gsap.from(element, {
+    scale: 1.5,
+    scrollTrigger: {
+      trigger: element,
+      start: "top bottom",
+      scrub: 1,
+    },
+  });
+});
+
+const menuContenus = document.querySelectorAll(".menu-contenu");
+
+// Utilisez GSAP pour animer chaque élément ".article-menu" à l'intérieur de chaque ".menu-contenu"
+menuContenus.forEach((menuContenu) => {
+  const articlesMenu = menuContenu.querySelectorAll(".article-menu");
+
+  articlesMenu.forEach((article, index) => {
+    gsap.from(article, {
+      opacity: 0,
+      x: 50,
+      duration: 1,
+      stagger: 0.5,
+      ease: "back.out",
+      scrollTrigger: {
+        trigger: menuContenu,
+        start: "center bottom",
+      },
     });
-const containerImagesMenu = document.querySelectorAll('.container-images-menu');
-
-    // Utilisez GSAP pour animer chaque élément individuellement
-    containerImagesMenu.forEach((unContainerImagesMenu, index) => {
-        gsap.from(unContainerImagesMenu, {
-            height:0,
-            y:-150,
-            duration: 1,
-            ease:"power1.out",
-            scrollTrigger: {
-                trigger: unContainerImagesMenu,
-                start:"center bottom",
-            }
-            
-        });
-    });
-    const elements = document.querySelectorAll(".images-menu");
-
-    // Utilisez GSAP pour animer chaque élément individuellement
-    elements.forEach((element, index) => {
-      gsap.from(element, {
-        scale: 1.5,
-        scrollTrigger: {
-          trigger: element,
-          start:"top bottom",
-          scrub: 1,
-        },
-      });
-    });
-
-
-    const menuContenus = document.querySelectorAll('.menu-contenu');
-
-    // Utilisez GSAP pour animer chaque élément ".article-menu" à l'intérieur de chaque ".menu-contenu"
-    menuContenus.forEach((menuContenu) => {
-        const articlesMenu = menuContenu.querySelectorAll('.article-menu');
-
-        articlesMenu.forEach((article, index) => {
-            gsap.from(article, {
-                opacity: 0,
-                x: 50,
-                duration: 1,
-                stagger: 0.5,
-                ease: "back.out",
-                scrollTrigger: {
-                  trigger: menuContenu,
-                  start:"center bottom",
-                },
-            });
-        });
-    });
+  });
+});
 ////////////////////////////////tippy//////////////////////
 document.addEventListener("DOMContentLoaded", function () {
   const tippyElements = document.querySelectorAll(".article-menu");
@@ -187,6 +200,17 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
           tlEmporter.play();
         }, 450);
+        setTimeout(function () {
+          ScrollTrigger.getAll().forEach((trigger) => {
+            trigger.disable();
+          });
+
+          ScrollTrigger.refresh();
+
+          ScrollTrigger.getAll().forEach((trigger) => {
+            trigger.enable();
+          });
+        }, 800);
         tlCarte.reverse();
         tlVolonte.reverse();
       }
@@ -200,6 +224,17 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
           tlCarte.play();
         }, 450);
+        setTimeout(function () {
+          ScrollTrigger.getAll().forEach((trigger) => {
+            trigger.disable();
+          });
+
+          ScrollTrigger.refresh();
+
+          ScrollTrigger.getAll().forEach((trigger) => {
+            trigger.enable();
+          });
+        }, 800);
         tlVolonte.reverse();
       }
     };
@@ -212,7 +247,25 @@ document.addEventListener("DOMContentLoaded", function () {
         tlCarte.reverse();
         setTimeout(function () {
           tlVolonte.play();
+          gsap.from(".gsap-menu", {
+            y: "80",
+            opacity: 0,
+            duration: 1,
+            ease: "power1.out",
+            stagger: 0.1,
+          });
         }, 450);
+        setTimeout(function () {
+          ScrollTrigger.getAll().forEach((trigger) => {
+            trigger.disable();
+          });
+
+          ScrollTrigger.refresh();
+
+          ScrollTrigger.getAll().forEach((trigger) => {
+            trigger.enable();
+          });
+        }, 800);
       }
     };
   };

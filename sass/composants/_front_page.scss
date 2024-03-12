@@ -1,0 +1,122 @@
+/* 
+** Tout ce qui concerne la page d'accueil
+*/
+.mot_gsap{
+    display: flex;
+}
+main{
+    background-image: none;
+}
+.ga-1{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+.groupe-top{
+    p{
+        padding-left: 3rem;
+    }
+}
+.accueil-vedette{
+    color: #fff;
+    padding: 2rem;
+    padding-top: 5rem;
+    .mot-gsap{
+        display: flex;
+    }
+    .texte-un{
+        display: flex;
+    }
+    .texte-vedette-intro{
+        position: relative;
+        z-index: 10;
+    }
+}
+.scroll{
+    position: absolute;
+    writing-mode: vertical-rl;
+    top: 10rem;
+}
+.fleche-bas{
+    position: absolute;
+    writing-mode:vertical-lr;
+    top: 110vh;
+    //text-orientation: upright;
+}
+.container-images-accueil{
+    width: min-content;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+    .images-accueil{
+        width: auto;
+        height: clamp(9.375rem, 3.75rem + 30vw, 18.75rem);
+    }
+}
+.vedette-block-gauche{
+    h2{
+        writing-mode: vertical-rl;
+        position: absolute;
+        left:  clamp(13rem, 5.8rem + 38.4vw, 25rem);
+        max-height: clamp(12.5rem, 5rem + 40vw, 25rem);;
+    }
+}
+.vedette-block-droit{
+    flex-direction: column-reverse;
+    p{
+        align-self: flex-end;
+        width: clamp(14rem, 7.4rem + 35.2vw, 25rem);
+    }
+}
+.image-un{
+    width: min-content;
+    align-self: flex-end;
+}
+.img-g{
+    width: min-content;
+}
+.img-d{
+    width: min-content;
+    align-self: flex-end;
+}
+.img-accueil-un{
+    height: clamp(9.375rem, 3.75rem + 30vw, 18.75rem);
+}
+.img-accueil-deux{
+    width: clamp(9.375rem, 3.75rem + 30vw, 18.75rem);
+    height:  clamp(12.5rem, 5rem + 40vw, 25rem);
+    .images-accueil{
+        height:  clamp(12.5rem, 5rem + 40vw, 25rem);
+    }
+}
+.img-accueil-trois{
+    width: clamp(14rem, 7.4rem + 35.2vw, 25rem);
+    height: clamp(9.375rem, 3.75rem + 30vw, 18.75rem);
+    .images-accueil{
+        width: clamp(14rem, 7.4rem + 35.2vw, 25rem);
+    }
+}
+
+
+///////////SECTION2/////////
+/// 
+/// 
+.accueil-intro{
+    background-color: #fff;
+    padding: 2rem;
+    .accueil-desc{
+        div:nth-child(3n){
+            
+                color: var(--beige);
+            
+        }
+    }
+}
+@media screen and (min-width: $largeur__tablette) {
+  }
+  
+  @media screen and (min-width: $largeur__bureau) {
+  }
+  

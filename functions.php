@@ -40,7 +40,7 @@ add_action('init', 'register_my_menus');
 function add_menu_link_class($atts, $item, $args)
 {
     if ($args->theme_location == 'pied') {
-        $atts['class'] = 'underline gsap-footer';
+        $atts['class'] = 'underline gsap-footer-mentions';
     }
     return $atts;
 }
@@ -56,7 +56,7 @@ function theme_enqueue_scripts()
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 
-
+///////////////////////////////////////////SHORTCODE POUR LE MENU/////////////////////////
 function custom_category_posts_shortcode($atts)
 {
     $atts = shortcode_atts(
@@ -124,12 +124,12 @@ function custom_category_posts_shortcode($atts)
                         <?php the_content(); ?>
                     </div>
                     <?php
-                // Récupérer la valeur du champ ACF et l'afficher
-                $acf_value = get_field('prix'); // Remplacez 'nom_du_champ_acf' par le nom réel de votre champ ACF
-                if ($acf_value) {
-                    echo '<p class="acf-content">' . esc_html($acf_value) . '</p>';
-                }
-                ?>
+                                // Récupérer la valeur du champ ACF et l'afficher
+                                $acf_value = get_field('prix'); // Remplacez 'nom_du_champ_acf' par le nom réel de votre champ ACF
+                                if ($acf_value) {
+                                    echo '<p class="acf-content">' . esc_html($acf_value) . '</p>';
+                                }
+                    ?>
                 </article>
                 <hr class="hr-article">
             <?php
