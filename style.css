@@ -1202,7 +1202,7 @@ main {
 
 .vedette .titre-vedette {
   position: absolute;
-  top: 30%;
+  top: 14rem;
   left: 10%;
   z-index: 4;
   color: var(--cream);
@@ -1349,13 +1349,6 @@ main {
 
 @media screen and (min-width: 800px) {
   /* Styles pour les écrans de taille tablette et plus */
-  .vedette .titre-vedette {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    z-index: 4;
-    color: var(--cream);
-  }
   .vedette .titre-vedette h1 {
     font-size: 7rem;
   }
@@ -1815,9 +1808,71 @@ main {
     height: clamp(46.875rem, 43.5345rem + 5.3879vw, 50rem);
   }
 }
-.main-contact section {
-  background-image: none;
+.main-contact .titre-contact {
+  font-size: clamp(3rem, 1.2rem + 6vw, 5rem) !important;
 }
 .main-contact section:nth-child(2n) {
   background-color: var(--cream);
+}
+.main-contact section:nth-child(2n+1) {
+  background-color: var(--rouge);
+}
+.main-contact .contact-texte {
+  padding: 2rem;
+}
+.main-contact .contact-texte p {
+  margin-top: 1rem;
+}
+.main-contact .coordonees {
+  padding: 1rem 2rem;
+  color: var(--cream);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.main-contact .coordonees a {
+  color: var(--cream);
+  font-weight: 400;
+}
+.main-contact .coordonees h4 {
+  margin: 1rem 0;
+}
+.main-contact .container-heures-contact {
+  padding: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.main-contact .map {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-contact .map iframe {
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .contact-titre .titre-vedette {
+    top: 20rem !important;
+  }
+  .contact-texte {
+    width: 60%;
+    margin: 0 auto;
+    padding: 4rem !important;
+  }
+  .contact-texte p {
+    margin-top: 1rem;
+  }
+  .coordonees {
+    margin: 4rem auto !important;
+  }
+  .container-heures-contact {
+    padding: 4rem !important;
+  }
+  .container-heures-contact h2 {
+    margin-bottom: 1rem;
+  }
 }

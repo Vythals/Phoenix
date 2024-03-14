@@ -18,13 +18,21 @@
           <div class="heures">
             <div class="container-heures">
               <h2 class="gsap-heures">HORAIRES D'OUVERTURE</h2>
-              <?php the_content(); ?>
-              <img class="image-parallaxe carotte" src="/Phoenix/wp-content/themes/Phoenix/images/carotte.png" alt="carotte" loading="lazy">
-              <img class="image-parallaxe echalotte" src="/Phoenix/wp-content/themes/Phoenix/images/echalotte.png" alt="echalotte" loading="lazy">
-              <img class="image-parallaxe oeuf" src="/Phoenix/wp-content/themes/Phoenix/images/oeuf.png" alt="oeuf" loading="lazy">
-              <img class="image-parallaxe piments" src="/Phoenix/wp-content/themes/Phoenix/images/piments.png" alt="piments" loading="lazy">
-              <img class="image-parallaxe soy" src="/Phoenix/wp-content/themes/Phoenix/images/soy.png" alt="soy" loading="lazy">
-              <img class="image-parallaxe tete-ail" src="/Phoenix/wp-content/themes/Phoenix/images/tete_ail.png" alt="tete_ail" loading="lazy">
+              <div class="gsap-heures"><?php the_content(); ?></div>
+              <?php
+              $image_url1 = get_template_directory_uri() . '/images/carotte.png';
+              $image_url2 = get_template_directory_uri() . '/images/echalotte.png';
+              $image_url3 = get_template_directory_uri() . '/images/oeuf.png';
+              $image_url4 = get_template_directory_uri() . '/images/piments.png';
+              $image_url5 = get_template_directory_uri() . '/images/soy.png';
+              $image_url6 = get_template_directory_uri() . '/images/tete_ail.png';
+              ?>
+              <img class="image-parallaxe carotte" src="<?php echo $image_url1; ?>" alt="carotte" loading="lazy">
+              <img class="image-parallaxe echalotte" src="<?php echo $image_url2; ?>" alt="echalotte" loading="lazy">
+              <img class="image-parallaxe oeuf" src="<?php echo $image_url3; ?>" alt="oeuf" loading="lazy">
+              <img class="image-parallaxe piments" src="<?php echo $image_url4; ?>" alt="piments" loading="lazy">
+              <img class="image-parallaxe soy" src="<?php echo $image_url5; ?>" alt="soy" loading="lazy">
+              <img class="image-parallaxe tete-ail" src="<?php echo $image_url6; ?>" alt="tete_ail" loading="lazy">
             </div>
           </div>
       <?php
@@ -63,14 +71,10 @@
   </div>
 
 </footer>
-<!-- GSAP-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<!----Lien de developpement
----lien du site https://atomiks.github.io/tippyjs/v6/getting-started/
---->
-<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
 
 <?php wp_footer(); ?>
 

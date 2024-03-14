@@ -78,21 +78,23 @@
           } else {
             foreach ($menu_items as $item) {
               $thumbnail_id = get_post_thumbnail_id($item->object_id);
-              $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'thumbnail', true)[0];
+              $thumbnail_url = ($thumbnail_id) ? wp_get_attachment_image_src($thumbnail_id, 'large', true, array('loading' => 'lazy'))[0] : '';
 
               echo '<div class="nav-link">';
               echo '<a href="' . esc_url($item->url) . '" class="lien' . esc_attr($item->menu_order) . ' underline">' . esc_html($item->title) . '</a>';
 
               // Vérifiez si une image mise en avant est définie
               if ($thumbnail_id) {
-                echo '<div class="nav-link-img"><img class="img-menu-burger" src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr($item->title) . '" class="thumbnail-image" /></div>';
+                echo '<div class="nav-link-img"><img class="img-menu-burger thumbnail-image" src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr($item->title) . '" /></div>';
               }
 
+              // La classe 'nav-item-wrapper' est-elle nécessaire ici ?
               echo '<div class="nav-item-wrapper"></div>';
               echo '</div>';
             }
           }
           ?>
+
 
 
         </div>

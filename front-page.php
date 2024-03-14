@@ -37,8 +37,9 @@ get_header(); ?>
                     <?php
                     $menu_soup_photo_post = get_page_by_path('accueil-image-un', OBJECT, 'post');
                     $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                    $featured_image_url = wp_get_attachment_url($featured_image_id);
-                    echo '<div class="container-images-accueil img-accueil-un"><img class="images-accueil" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                    $image_size = 'large';
+                    $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-accueil'));
+                    echo '<div class="container-images-accueil img-accueil-un">' . $featured_image_html . '</div>';
                     ?>
                 </div>
                 <p class="texte-fp-un">Une fusion parfaite de traditions culinaires et d'innovation audacieuse.</p>
@@ -51,8 +52,9 @@ get_header(); ?>
                     <?php
                     $menu_soup_photo_post = get_page_by_path('accueil-image-riz', OBJECT, 'post');
                     $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                    $featured_image_url = wp_get_attachment_url($featured_image_id);
-                    echo '<div class="container-images-accueil img-accueil-deux"><img class="images-accueil" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                    $image_size = 'large';
+                    $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-accueil'));
+                    echo '<div class="container-images-accueil img-accueil-deux">' . $featured_image_html . '</div>';
                     ?>
                 </div>
                 <h2 class="texte-fp-deux">L'art de la dégustation</h2>
@@ -64,8 +66,9 @@ get_header(); ?>
                     <?php
                     $menu_soup_photo_post = get_page_by_path('accueil-image-deux', OBJECT, 'post');
                     $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                    $featured_image_url = wp_get_attachment_url($featured_image_id);
-                    echo '<div class="container-images-accueil img-accueil-trois"><img class="images-accueil" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                    $image_size = 'large';
+                    $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-accueil'));
+                    echo '<div class="container-images-accueil img-accueil-trois">' . $featured_image_html . '</div>';
                     ?>
                 </div>
             </div>

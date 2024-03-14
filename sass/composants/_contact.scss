@@ -1,8 +1,71 @@
 .main-contact{
-    section{
-        background-image: none;
+
+    .titre-contact{
+        font-size: clamp(3rem, 1.2rem + 6vw, 5rem) !important;
     }
     section:nth-child(2n){
     background-color: var(--cream);
+    }
+    section:nth-child(2n+1){
+        background-color: var(--rouge);
+    }
+    .contact-texte{
+        padding: 2rem;
+        p{
+            margin-top: 1rem;
+        }
+    }
+    .coordonees{
+        padding: 1rem 2rem;
+        color: var(--cream);
+        width: fit-content;
+        margin: 0 auto;
+        a{
+            color: var(--cream);
+            font-weight: 400;
+        }
+        h4{
+            
+            margin: 1rem 0;
+        }
+    }
+    .container-heures-contact{
+        padding: 1rem;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    .map{
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        iframe{
+            width: 100%;
+        }
+    }
+}
+@media screen and (min-width: $largeur__bureau) {
+    .contact-titre{
+        .titre-vedette{
+            top: 20rem !important;
+        }
+    }
+    .contact-texte{
+        width: 60%;
+        margin: 0 auto;
+        padding: 4rem !important;
+        p{
+            margin-top: 1rem;
+        }
+    }
+    .coordonees{
+        margin: 4rem auto !important;
+    }
+    .container-heures-contact{
+        padding: 4rem !important;
+        h2{
+            margin-bottom: 1rem;
+        }
     }
 }

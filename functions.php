@@ -48,16 +48,17 @@ add_filter('nav_menu_link_attributes', 'add_menu_link_class', 10, 3);
 /*------------------------------------------------------------------------------ tout les scipts */
 function theme_enqueue_scripts()
 {
-    // Charger le fichier JavaScript du menu burger
     wp_enqueue_script('constant-script', get_template_directory_uri() . '/js/constant.js', array('jquery'), null, true);
 
-    // Charger le fichier front-page.js si on est sur la page front-page
     if (is_front_page()) {
         wp_enqueue_script('front-page-script', get_template_directory_uri() . '/js/front-page.js', array('jquery'), null, true);
     }
 
     if (is_page_template('template-menu.php')) {
         wp_enqueue_script('page-menus', get_template_directory_uri() . '/js/page-menus.js', array('jquery'), null, true);
+    }
+    if (is_page_template('template-contact.php')) {
+        wp_enqueue_script('page-contact', get_template_directory_uri() . '/js/page-contact.js', array('jquery'), null, true);
     }
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
@@ -73,8 +74,8 @@ function custom_category_posts_shortcode($atts)
             'exclude_categories' => '',
             'exclude_relation' => 'AND',
             'posts_per_page' => -1,
-            'orderby' => 'date', // Nouveau paramètre pour l'ordre
-            'order' => 'DESC',   // Nouveau paramètre pour la direction de l'ordre
+            'orderby' => 'date',
+            'order' => 'DESC',
         ),
         $atts,
         'custom_category_posts'
@@ -87,7 +88,6 @@ function custom_category_posts_shortcode($atts)
         'relation' => $atts['relation'],
     );
 
-    // Ajouter la condition pour les catégories spécifiées
     if ($atts['categories'] !== '') {
         $tax_query[] = array(
             'taxonomy' => 'category',
@@ -97,7 +97,6 @@ function custom_category_posts_shortcode($atts)
         );
     }
 
-    // Ajouter la condition pour les catégories à exclure
     if ($atts['exclude_categories'] !== '') {
         $tax_query[] = array(
             'relation' => $atts['exclude_relation'],
@@ -131,8 +130,8 @@ function custom_category_posts_shortcode($atts)
                         <?php the_content(); ?>
                     </div>
                     <?php
-                                // Récupérer la valeur du champ ACF et l'afficher
-                                $acf_value = get_field('prix'); // Remplacez 'nom_du_champ_acf' par le nom réel de votre champ ACF
+
+                                $acf_value = get_field('prix');
                                 if ($acf_value) {
                                     echo '<p class="acf-content">' . esc_html($acf_value) . '</p>';
                                 }

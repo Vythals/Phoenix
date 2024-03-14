@@ -18,10 +18,7 @@
             </div>
             <div class="voile-carrou"></div>
             <?php
-            // Récupérer les articles de la catégorie "galerie"
-            $galerie_posts = new WP_Query('category_name=galerie');
-
-            // Vérifier s'il y a des articles dans la catégorie "galerie"
+            $galerie_posts = new WP_Query('category_name=galerie-menu');
             if ($galerie_posts->have_posts()) :
             ?>
                 <div class="splide">
@@ -42,11 +39,7 @@
                     </div>
                 </div>
             <?php
-                // Réinitialiser la requête après l'utilisation de WP_Query
                 wp_reset_postdata();
-            else :
-                // Aucun article trouvé dans la catégorie "galerie"
-                echo 'Aucun article trouvé dans la catégorie "galerie".';
             endif;
             ?>
         </div>
@@ -83,14 +76,8 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-combo-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-
-                        // Définir la taille souhaitée
-                        $image_size = 'thumbnail'; // Remplacez 'thumbnail' par la taille souhaitée (par exemple, 'medium', 'large', 'full', ou une taille personnalisée)
-
-                        // Récupérer le code HTML de l'image avec la taille spécifiée, ajout de l'attribut loading="lazy", et de la classe "images-menu"
+                        $image_size = 'medium';
                         $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
-
-                        // Afficher le code HTML
                         echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
 
@@ -105,8 +92,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-soup-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,soupes" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -119,8 +107,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-entrees-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,entrees" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -133,8 +122,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-porc-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,porc" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -147,8 +137,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-fruits-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,fruits-de-mer" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -161,8 +152,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-boeuf-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,boeuf" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -175,8 +167,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-poulet-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,poulet" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -189,8 +182,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-canard-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,canard" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -203,8 +197,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-agneau-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,agneau" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -217,8 +212,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-legume-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,legume" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -231,8 +227,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-riz-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,riznouilles" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -252,8 +249,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-combo-sushi-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,combo-sushi" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -266,8 +264,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-nigiri-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,nigiris" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -280,8 +279,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-hosomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,hosomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -294,8 +294,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-makis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,makis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -308,8 +309,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-futomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-emporter,futomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -332,14 +334,8 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-combo-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-
-                        // Définir la taille souhaitée
-                        $image_size = 'thumbnail'; // Remplacez 'thumbnail' par la taille souhaitée (par exemple, 'medium', 'large', 'full', ou une taille personnalisée)
-
-                        // Récupérer le code HTML de l'image avec la taille spécifiée, ajout de l'attribut loading="lazy", et de la classe "images-menu"
+                        $image_size = 'medium';
                         $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
-
-                        // Afficher le code HTML
                         echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
 
@@ -354,8 +350,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-soup-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,soupes" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -368,8 +365,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-entrees-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,entrees" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -382,8 +380,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-porc-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,porc" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -396,8 +395,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-fruits-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,fruits-de-mer" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -410,8 +410,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-boeuf-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,boeuf" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -424,8 +425,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-poulet-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,poulet" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -438,8 +440,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-canard-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,canard" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -452,8 +455,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-agneau-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,agneau" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -466,8 +470,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-legume-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,legume" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -480,8 +485,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-riz-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,riznouilles" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -501,8 +507,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-combo-sushi-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,combo-sushi" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -515,8 +522,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-nigiri-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,nigiris" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -529,8 +537,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-hosomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,hosomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -543,8 +552,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-makis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,makis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -557,8 +567,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-futomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-la-carte,futomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -605,8 +616,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-soup-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,soupes" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -619,8 +631,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-entrees-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,entrees" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -633,8 +646,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-fruits-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,fruits-de-mer" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -647,8 +661,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-boeuf-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,boeuf" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -661,8 +676,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-poulet-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,poulet" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -675,8 +691,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-legume-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,legume" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -689,8 +706,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-riz-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,riznouilles" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -710,8 +728,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-nigiri-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,nigiris" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -724,8 +743,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-hosomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,hosomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -738,8 +758,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-makis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,makis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');
@@ -752,8 +773,9 @@
                         <?php
                         $menu_soup_photo_post = get_page_by_path('menu-futomakis-photo', OBJECT, 'post');
                         $featured_image_id = get_post_thumbnail_id($menu_soup_photo_post->ID);
-                        $featured_image_url = wp_get_attachment_url($featured_image_id);
-                        echo '<div class="container-images-menu"><img class="images-menu" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
+                        $image_size = 'medium';
+                        $featured_image_html = wp_get_attachment_image($featured_image_id, $image_size, false, array('loading' => 'lazy', 'class' => 'images-menu'));
+                        echo '<div class="container-images-menu">' . $featured_image_html . '</div>';
                         ?>
                         <?php
                         echo do_shortcode('[custom_category_posts categories="menu-a-volonte,futomakis" relation="AND" exclude_categories="" exclude_relation="OR" posts_per_page="-1" orderby="date" order="ASC"]');

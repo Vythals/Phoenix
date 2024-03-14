@@ -36,7 +36,7 @@
 .vedette{
     .titre-vedette{
         position: absolute;
-        top: 30%;
+        top: 14rem;
         left: 10%;
         z-index: 4;
         color: var(--cream);
@@ -197,11 +197,6 @@
     /* Styles pour les écrans de taille tablette et plus */
     .vedette{
         .titre-vedette{
-            position: absolute;
-            top: 30%;
-            left: 10%;
-            z-index: 4;
-            color: var(--cream);
             h1{
                 font-size: 7rem;
             }
