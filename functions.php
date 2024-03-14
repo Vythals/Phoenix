@@ -50,11 +50,18 @@ function theme_enqueue_scripts()
 {
     // Charger le fichier JavaScript du menu burger
     wp_enqueue_script('constant-script', get_template_directory_uri() . '/js/constant.js', array('jquery'), null, true);
+
+    // Charger le fichier front-page.js si on est sur la page front-page
+    if (is_front_page()) {
+        wp_enqueue_script('front-page-script', get_template_directory_uri() . '/js/front-page.js', array('jquery'), null, true);
+    }
+
     if (is_page_template('template-menu.php')) {
         wp_enqueue_script('page-menus', get_template_directory_uri() . '/js/page-menus.js', array('jquery'), null, true);
     }
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+
 
 ///////////////////////////////////////////SHORTCODE POUR LE MENU/////////////////////////
 function custom_category_posts_shortcode($atts)

@@ -1,4 +1,73 @@
 gsap.registerPlugin(ScrollTrigger);
+/////////////////////////////Vedette/////////////////////
+document.addEventListener("DOMContentLoaded", function () {
+  var splide = new Splide(".splide", {
+    type: "fade",
+    rewind: true,
+    speed: 2000,
+    autoplay: (boolean = true),
+    interval: (number = 5000),
+    arrows: (boolean = false),
+    pagination: (boolean = false),
+    height: "100dvh",
+  });
+  splide.mount();
+});
+// Assurez-vous que jQuery est chargé
+jQuery(document).ready(function ($) {
+  // Intercepter les clics sur les liens internes du site
+  $("a").on("click", function (event) {
+    // Vérifier si le lien pointe vers une page du site
+    if (this.hostname == window.location.hostname) {
+      // Empêcher le comportement par défaut du lien
+      event.preventDefault();
+
+      // Animation de transition avec GSAP
+      const tltransition = new TimelineMax();
+      tltransition.to(".transition-1", 0.5, {
+        top: "100vh",
+        ease: "power2.in",
+      });
+      tltransition.to(
+        ".transition-2",
+        1,
+        {
+          top: 0,
+          ease: "power2.in",
+          onComplete: function () {
+            // Rediriger vers la nouvelle page
+            window.location.href = this.href;
+          }.bind(this),
+        },
+        "<0.2"
+      );
+    }
+  });
+});
+// Assurez-vous que jQuery est chargé
+jQuery(document).ready(function ($) {
+  // Animation de transition à l'entrée de la page
+  const tlEntry = new TimelineMax();
+  tlEntry.to(".transition-1", 1, {
+    top: "-100vh",
+    delay: 0.2,
+    ease: "power2.in",
+  });
+  tlEntry.fromTo(
+    ".transition-2",
+    0.5,
+    {
+      top: "100vh",
+      ease: "power2.in",
+    },
+    {
+      top: "-100vh",
+      ease: "power2.in",
+    },
+    "<0.8"
+  );
+});
+
 const tl = gsap.timeline({ paused: true });
 
 //menu burger ouvert

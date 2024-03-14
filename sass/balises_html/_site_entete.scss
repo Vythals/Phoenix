@@ -6,6 +6,15 @@
     position: relative;
   }
 }
+.transi{
+  position: fixed; /* Utilisez fixed pour garder le rectangle en place lors du défilement */
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--rouge);
+  top: 0; /* Faites glisser le rectangle de la position supérieure de la page */
+  left: 0;
+  z-index: 1000000000000;
+}
 
 /* Intro Styles */
 
@@ -110,25 +119,6 @@
   justify-content: center;
   align-items: center;
   visibility: hidden;
-
-  a {
-    width: fit-content;
-    background: linear-gradient(0deg, var(--beige), var(--beige)) no-repeat right bottom / 0 var(--bg-h);
-    transition: background-size 350ms;
-
-    &:where(:hover, :focus-visible) {
-      background-size: 100% var(--bg-h);
-      background-position-x: left;
-    }
-  }
-  .underline {
-    padding-bottom: 2px;
-    --bg-h: 2px;
-    width: fit-content;
-    height: fit-content;
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 .nav-bg {

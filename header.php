@@ -15,6 +15,12 @@
 <body>
 
   <header id="site-navigation" class="main-navigation">
+    <div class="transition-1 transi">
+
+    </div>
+    <div class="transition-2 transi">
+
+    </div>
     <div class="container">
       <div class="navbar">
         <?php

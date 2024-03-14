@@ -1,0 +1,8 @@
+.main-contact{
+    section{
+        background-image: none;
+    }
+    section:nth-child(2n){
+    background-color: var(--cream);
+    }
+}

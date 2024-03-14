@@ -41,7 +41,7 @@ get_header(); ?>
                     echo '<div class="container-images-accueil img-accueil-un"><img class="images-accueil" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                     ?>
                 </div>
-                <p>Une fusion parfaite de traditions culinaires et d'innovation audacieuse.</p>
+                <p class="texte-fp-un">Une fusion parfaite de traditions culinaires et d'innovation audacieuse.</p>
             </div>
             <div>
                 <h4 class="scroll">Scroll....................</h4>
@@ -55,11 +55,11 @@ get_header(); ?>
                     echo '<div class="container-images-accueil img-accueil-deux"><img class="images-accueil" src="' . esc_url($featured_image_url) . '" alt="Soupe Wonton"></div>';
                     ?>
                 </div>
-                <h2>L'art de la dégustation</h2>
-                <p>Explorez notre univers culinaire unique.</p>
+                <h2 class="texte-fp-deux">L'art de la dégustation</h2>
+                <p class="texte-fp-deux">Explorez notre univers culinaire unique.</p>
             </div>
             <div class="ga-1 vedette-block-droit">
-                <p>Succombez à notre ambiance chaleureuse et dégustez des moments inoubliables.</p>
+                <p class="texte-fp-trois">Succombez à notre ambiance chaleureuse et dégustez des moments inoubliables.</p>
                 <div class="img-d">
                     <?php
                     $menu_soup_photo_post = get_page_by_path('accueil-image-deux', OBJECT, 'post');
@@ -89,7 +89,12 @@ get_header(); ?>
             ?>
                 <div class="accueil-desc-texte">
                     <?php the_content(); ?>
-                    <a href="<?php echo get_permalink(get_page_by_path('menu')); ?>">Découvrir les Menus</a>
+                    <a class="fancy" href="<?php echo get_permalink(get_page_by_path('menu')); ?>">
+                        <span class="top-key"></span>
+                        <span class="text">Découvrir les Menus</span>
+                        <span class="bottom-key-1"></span>
+                        <span class="bottom-key-2"></span>
+                    </a>
                 </div>
             <?php
             endwhile;
@@ -107,8 +112,10 @@ get_header(); ?>
             $custom_query = new WP_Query($args);
             while ($custom_query->have_posts()) : $custom_query->the_post();
             ?>
-                <div class="image-accueil-desc">
-                    <?php the_post_thumbnail(); ?>
+                <div class="img-section-2">
+                    <div class="image-accueil-desc">
+                        <?php the_post_thumbnail(); ?>
+                    </div>
                 </div>
             <?php
             endwhile;
